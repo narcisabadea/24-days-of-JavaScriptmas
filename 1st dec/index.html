@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Candies</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="body-bg">
+    <div class="container-style">
+      <div class="text-style">How many children do you have?</div>
+      <input type="number" class="input-style" id='children'/>
+
+      <div class="text-style">How many candies do you have?</div>
+      <input type="number" class="input-style" id='candies'/>
+      <button onClick="candies()" class="btn-style">Calculate</button>
+
+      <div class="text-style">
+        Each child will receive <span id="candyPieces">0</span> pieces of candy.
+      </div>
+      <div class="text-style">
+        <span id="totalCandies">0</span> pieces of candy were eaten.
+      </div>
+    </div>
+
+    <script>
+      // n children have got m pieces of candy. They want to eat much candy as they can,
+      // but each child must eat exactly the same amound of candy as any other child.
+      // Determine how many pieces of candy will be eatern by all the children together.
+      // Individual pieces of candt cannot be split.
+
+      // exemple
+      //  for n = 3 and m = 10, the output should be candies(n,m) = 9.
+      //  Each child will eat 3 pieces. So the answear is 9.
+
+      let equalCandies = 0;
+      let totalCandies = 0;
+      
+      function candies() {
+        let children = document.getElementById('children').value
+        let candy = document.getElementById('candies').value
+        equalCandies = Math.floor(candy / children);
+        totalCandies = Math.floor(candy / children) * children;
+        document.getElementById("candyPieces").innerHTML = equalCandies || 0;
+        document.getElementById("totalCandies").innerHTML = totalCandies || 0;
+      }
+    </script>
+  </body>
+
+  <style>
+    #body-bg {
+      background: url("./bg.jpg") top center;
+      background-size: cover;
+    }
+    .container-style {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin-top: 20px;
+    }
+    .text-style {
+      font-size: 26px;
+      font-family: "Satisfy", cursive;
+    }
+    .btn-style {
+      font-size: 26px;
+      font-family: "Satisfy", cursive;
+      background-color: #9e3346;
+      border: 1px solid #9e3346;
+      color: white;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      border-radius: 5px;
+    }
+    .input-style {
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  </style>
+</html>
