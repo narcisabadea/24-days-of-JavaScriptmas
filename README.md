@@ -1,4 +1,4 @@
-# 24 days of JavaScriptmas from Scrimba
+# 24 days of #JavaScriptmas from Scrimba
 
 Level up JavaScript skills with a [daily coding challenge](https://scrimba.com/learn/adventcalendar) from December 1st to 24th.
 
