@@ -6,3 +6,7 @@ Level up JavaScript skills with a [daily coding challenge](https://scrimba.com/l
 * 01 - Candies
 
 ![Candies](1st%20dec/ss.png)
+
+* 04 - Century from year
+
+![Century](4th%20dec/ss.png)
