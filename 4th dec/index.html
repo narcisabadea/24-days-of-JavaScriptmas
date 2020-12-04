@@ -3,8 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <title>Century from year</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body id="body-bg">
+    <div class="container-style">
+      <div class="text-question-style">Get the century of a year</div>
+      <input type="number" class="input-style" id='year'/>
+
+      <button onClick="centuryForYear()" class="btn-style">Find out</button>
+
+    
+      <div class="text-style">
+        <span id="century"></span>
+      </div>
+    </div>
+
+
     <script>
       // Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100,
       // the second from the year 101 up to and including the year 200, etc.
@@ -13,9 +28,55 @@
       // for year 1905 = the output for centuryForYear(year) = 20
       // for year 1700 = the output for centuryForYear(year) = 17
 
-      function centuryForYear(year) {
-        return Math.floor((year-1)/100) + 1
+      function centuryForYear() {
+        let getYear = document.getElementById('year').value
+        let century =  Math.floor((getYear-1)/100) + 1
+        document.getElementById("century").innerHTML = `It's the ${century} century!`
       }
     </script>
   </body>
+
+  <style>
+    #body-bg {
+      background: url("./bg.jpg") top center;
+      background-size: cover;
+    }
+    .container-style {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .text-question-style {
+      font-size: 30px;
+     font-family: 'Oswald', sans-serif;
+      color: white;
+      margin-top: 150px;
+    }
+    .text-style {
+      font-size: 26px;
+     font-family: 'Oswald', sans-serif;
+      color: #054405;
+      margin-top: 20px
+    }
+    .btn-style {
+      font-size: 20px;
+     font-family: 'Oswald', sans-serif;
+      background-color: #054405;
+      border: 1px solid #054405;
+      color: white;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      border-radius: 3px;
+    }
+    .input-style {
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  </style>
 </html>
