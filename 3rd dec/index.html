@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chunky Monkey</title>
+  </head>
+  <body>
+    <script>
+      // Write a function that splits an array (1st arg) into groups the length of size (2nd arg)and returns them as a two-dimensional array.
+
+      // exemple
+      // chunkyMonkey(['a','b','c','d'], 2) should return [['a','b'],['c','d']]
+      // chunkyMonkey([0,1,2,3,4,5], 4) should return [[0,1,2,3], [4,5]]
+
+      function chunkyMonkey(values, size) {
+        return [
+          [...values.slice(0, size)],
+          [...values.slice(size, values.length)],
+        ];
+      }
+    </script>
+  </body>
+</html>
