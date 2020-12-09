@@ -10,3 +10,7 @@ Level up JavaScript skills with a [daily coding challenge](https://scrimba.com/l
 * 04 - Century from year
 
 ![Century](4th%20dec/ss.png)
+
+* 08 - Rolling dice
+
+![Dice](8th%20dec/ss.png)
