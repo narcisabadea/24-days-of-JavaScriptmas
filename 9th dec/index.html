@@ -5,34 +5,31 @@
     <title>Sum Odd Fibonacci Numbers</title>
   </head>
   <body>
-  
-
     <script>
-    // Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
-    // The first 6 numbers of the Fibonacci sequens is 1,1,2,3,5,8
+      // Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+      // The first 6 numbers of the Fibonacci sequens is 1,1,2,3,5,8
 
-    //   exemple 
-    //   sumOddFibonacciNumbers(10) should return 10
-    //   sumOddFibonacciNumbers(1000) should return 1785
+      //   exemple
+      //   sumOddFibonacciNumbers(10) should return 10
+      //   sumOddFibonacciNumbers(1000) should return 1785
 
       function sumOddFibonacciNumbers(num) {
-    let sum = 0;
-    let previous = 0;
-    let current = 1;
-    
-    while(current <= num) {
-        if(current % 2 === 1) {
+        let sum = 0;
+        let previous = 0;
+        let current = 1;
+
+        while (current <= num) {
+          if (current % 2 === 1) {
             sum += current;
+          }
+
+          const nextValue = current + previous;
+          previous = current;
+          current = nextValue;
         }
-        
-        const nextValue = current + previous;
-        previous = current;
-        current = nextValue;
-    }
-    
-    return sum;
-}
+
+        return sum;
+      }
     </script>
   </body>
- 
 </html>
