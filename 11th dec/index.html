@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Avoid obstacles</title>
+  </head>
+  <body>
+    <script>
+      // Your are given an array of integers representing the coordinates of obstacles situated on a streight line.
+      // Assume that your are jumping from the point with coordinate 0o the right. You are allowed only to make jumps of the same length represented by some integer.
+      //  Find the minimal length of the jump to avoid all the obstacles.
+
+      //   exemple
+      //   for inputArray=  [5, 3, 6, 7, 9] the output should be avoidObstacles(inputArray) = 4
+
+      function avoidObstacles(nums) {
+        const largestNum = nums.sort((a, b) => a - b)[nums.length - 1];
+
+        for (let i = 1; i <= largestNum + 1; i++) {
+          if (nums.every((value) => value % i !== 0)) {
+            return i;
+          }
+        }
+      }
+      
+    </script>
+  </body>
+</html>
