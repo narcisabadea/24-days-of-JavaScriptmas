@@ -11,10 +11,10 @@
       //   exemple
       //   for inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and k = 3 the output should be extractEachKth(inputArray, k) = [1, 2, 4, 5, 6, 7, 8, 10] ;
 
-      function extractEachKth(nums, index) {
-        return nums.filter((value, i) => (i + 1) % index !== 0);
+      function extractEachKth(num, k) {
+        return num.filter((value, i) => (i + 1) % k !== 0);
       }
-      
+
     </script>
   </body>
 </html>
