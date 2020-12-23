@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert Dashes</title>
+  </head>
+  <body>
+    <script>
+      // Transform a given sentence into a new one with dashes between each two consecutive letters.
+
+      function insertDashes(str) {
+        const words = str.split(" ");
+        const dashedWords = words.map((word) => {
+          const chars = word.split("");
+
+          return chars.join("-");
+        });
+        return dashedWords.join(" ");
+      }
+    </script>
+  </body>
+</html>

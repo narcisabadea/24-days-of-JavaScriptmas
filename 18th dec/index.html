@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array previous less</title>
+  </head>
+  <body>
+    <script>
+      // Given an array of integers, for each position i, search among the previous positions for the las position that contains a smaller value.
+
+      function arrayPreviousLess(nums) {
+    const previousLess = [];
+    for(let i = nums.length -1; i >= 0; i--) {
+        for(let j = i; j >= 0; j--) {
+            if(nums[i] > nums[j]) {
+                previousLess.unshift(nums[j]);
+                break;
+            } else if (j === 0) {
+                previousLess.unshift(-1);
+            }
+        }
+    }
+    return previousLess;
+}
+    </script>
+  </body>
+</html>

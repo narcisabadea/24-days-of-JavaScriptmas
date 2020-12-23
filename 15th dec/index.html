@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Carousel</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="previous"> < </div>
+      <div class="gallery-wrapper">
+          <div class="gallery">
+              <img class="card current" src="./presents.jpg" alt="Christmas presents">
+              <img class="card" src="./cookies.jpg" alt="Christmas Cookies">
+              <img class="card" src="./santa.jpg" alt="Santa Claus">
+              <img class="card" src="./candy.jpg" alt="Christmas candy cane">
+              <img class="card" src="./reindeer.jpg" alt="Christmas reindeer">
+          </div>
+      </div>
+      <div class="next"> > </div>
+
+  
+  </div>
+  
+    <script>
+      // Use JS to make it function. Left & right arrrows should work. Bonus: Use CSS transitions.
+
+      const gallery = document.getElementsByClassName("gallery")[0];
+      const prevBtn = document.getElementsByClassName("previous")[0];
+      const nextBtn = document.getElementsByClassName("next")[0];
+      const galleryCardCount = document.getElementsByClassName("card").length;
+
+      let currentGalleryXOffset = 0;
+      const endGalleryXOffset = (galleryCardCount - 1) * -220;
+
+      prevBtn.addEventListener("click", galleryClickHandler);
+      nextBtn.addEventListener("click", galleryClickHandler);
+
+      function galleryClickHandler(event) {
+        let targetBtn = event.target.className;
+        if (targetBtn == "previous" && currentGalleryXOffset < 0) {
+          currentGalleryXOffset += 220;
+        } else if (
+          targetBtn == "next" &&
+          currentGalleryXOffset > endGalleryXOffset
+        ) {
+          currentGalleryXOffset -= 220;
+        }
+
+        if (currentGalleryXOffset == 0) {
+          prevBtn.style.opacity = 0.3;
+          prevBtn.style.cursor = "default";
+        } else {
+          prevBtn.style.opacity = 1;
+          prevBtn.style.cursor = "pointer";
+        }
+
+        if (currentGalleryXOffset == endGalleryXOffset) {
+          nextBtn.style.opacity = 0.3;
+          nextBtn.style.cursor = "default";
+        } else {
+          nextBtn.style.opacity = 1;
+          nextBtn.style.cursor = "pointer";
+        }
+
+        gallery.style.transform = `translateX(${currentGalleryXOffset}px)`;
+      }
+    </script>
+  </body>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Playfair Display';
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+}
+
+.previous, .next {
+    width: 35px;
+}
+.previous {
+    opacity: .3;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% 200px 20%;
+    place-content: center;
+}
+
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+.previous, .next {
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.gallery {
+    transform-style: preserve-3d;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    transform: translateX(0);
+    transition: transform 0.25s ease;
+}
+
+.card {
+    margin-right: 20px;
+    align-self: center;
+}
+  </style>
+</html>

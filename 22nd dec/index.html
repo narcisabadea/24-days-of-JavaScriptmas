@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Extract Matrix column</title>
+  </head>
+  <body>
+    <script>
+      // Given an rectangular matrix and an integer column, return an array containing the elements of the columnth column of the given matrix (the leftmost column is the 0th one)
+
+      //exemple 
+      // for matrix = [[1, 1, 1, 2], [0, 5, 0, 4], [2, 1, 3, 6]] and column 2 the output will be extractMatrixColumn(matrix, column) = [1, 0, 3]
+
+      function extractMatrixColumn(matrix, column) {
+    //  write code here.
+    return matrix.map( row => row[column]);
+            
+}
+    </script>
+  </body>
+</html>
