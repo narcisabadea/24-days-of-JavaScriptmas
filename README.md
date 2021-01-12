@@ -2,6 +2,8 @@
 
 Level up JavaScript skills with a [daily coding challenge](https://scrimba.com/learn/adventcalendar) from December 1st to 24th.
 
+The certificate of completion can be found [HERE](https://scrimba.com/certificate/uv4gB6H4/gadventcalendar).
+
 ## Screenshots
 * 01 - Candies
 
